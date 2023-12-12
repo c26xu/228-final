@@ -9,29 +9,35 @@ Clara Xu
     <title>Stewie's Site!</title>
     <meta charset="utc-8">
     <style>
-      body{
+      body {
         background-color: #ffffff;
         color: #000;
       }
-      
+
       h1 {
         width: 100%;
       }
-      
+
       #nav {
         background-color: #808080;
-        width: 100%; 
+        width: 100%;
         padding-bottom: 5px;
         display: flex;
-      	align-items: center;
+        align-items: center;
       }
-      
-       ul {  
+
+      #nav img {
+        float: left;
+      }
+
+      ul {
         padding: 0;
         margin: 0;
         margin-left: 40px;
         font-family: Franklin Gothic Medium, Courier, monospace;
         font-size: 24px;
+        text-align: right;
+
       }
 
       ul li {
@@ -39,19 +45,19 @@ Clara Xu
         display: inline-block;
         margin-right: 25px;
       }
-      
+
       ul li a {
         color: #000000
       }
     </style>
   </head>
-  
-  
-  
+
+
+
   <body>
     <div id="header">
       <div id="nav">
-      <img src="Logo.jpg" style="width: 350px;" alt="Stewie's Site">
+        <img src="claras-cats.png" style="width: 350px;" alt="Clara's Cats">
         <ul>
           <li><a href="">HOME</a></li>
           <li><a href="">ABOUT ME</a></li>
@@ -60,6 +66,44 @@ Clara Xu
         </ul>
       </div>
     </div>
-    
+
+    <!--
+Code copied from: https://www.w3schools.com/w3css/w3css_slideshow.asp
+Author: w3schools.com
+Name: Automatic slideshow
+Description: Displays an automatic (animated) slideshow.
+Date retrieved: Dec. 11, 2023
+-->
+
+    <!-- Copied code starts -->
+
+    <div class="w3-content w3-section">
+      <img class="mySlides" src="slideshow1.JPG" alt="Toby Slide 1" style="width:100%">
+      <img class="mySlides" src="slideshow2.JPG" alt="Stewie Slide 1" style="width:100%">
+      <img class="mySlides" src="slideshow3.JPG" alt="Toby Slide 2" style="width:100%">
+      <img class="mySlides" src="slideshow4.JPG" alt="Stewie Slide 2" style="width:100%">
+      <img class="mySlides" src="slideshow5.JPG" alt="Toby Slide 3" style="width:100%">
+    </div>
+
+    <script>
+      let myIndex = 0;
+      carousel();
+
+      function carousel() {
+        let i;
+        let x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {
+          myIndex = 1
+        }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 2000); // Change image every 2 seconds
+      }
+    </script>
+    <!-- Copied code ends -->
+
   </body>
 </html>
